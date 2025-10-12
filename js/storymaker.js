@@ -90,3 +90,21 @@
             // Display the generated story
             displayStory();
         }
+
+        //function to reset the story maker to initial state
+
+        function resetStory() {
+             // Reset all indices to -1
+            currentIndices = [-1, -1, -1, -1, -1];
+            
+            // Reset all selected words to '?'
+            selectedWords = ['?', '?', '?', '?', '?'];
+            
+            // Update all displays to show '?'
+            for (let i = 0; i < 5; i++) {
+                document.getElementById('word-' + i).textContent = '?';
+            }
+            
+            // Hide the story display
+            document.getElementById('story-display').classList.remove('active');
+        }
