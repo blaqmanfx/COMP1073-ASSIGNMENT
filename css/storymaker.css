@@ -1,0 +1,204 @@
+/* Reset and base styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Comic Sans MS', 'Arial Rounded MT Bold', cursive, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        /* Main container styling */
+        .container {
+            background: linear-gradient(145deg, #ffffff, #f0f0f0);
+            border-radius: 30px;
+            padding: 40px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            max-width: 800px;
+            width: 100%;
+            border: 8px solid #ff6b6b;
+        }
+
+        /* Title styling */
+        h1 {
+            text-align: center;
+            color: #ff6b6b;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #4ecdc4;
+            font-size: 1.2em;
+            margin-bottom: 30px;
+        }
+
+        /* Word selector container */
+        .word-selectors {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        /* Individual word selector styling */
+        .selector {
+            background: white;
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: transform 0.2s;
+        }
+
+        .selector:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .selector-label {
+            font-size: 0.9em;
+            color: #666;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        /* Button styling */
+        .cycle-btn {
+            background: linear-gradient(145deg, #4ecdc4, #44a8a0);
+            color: white;
+            border: none;
+            border-radius: 12px;
+            padding: 15px 25px;
+            font-size: 1.1em;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s;
+            width: 100%;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .cycle-btn:hover {
+            background: linear-gradient(145deg, #44a8a0, #3d918a);
+            transform: scale(1.05);
+        }
+
+        .cycle-btn:active {
+            transform: scale(0.95);
+        }
+
+        /* Selected word display */
+        .selected-word {
+            font-size: 1.3em;
+            color: #ff6b6b;
+            margin-top: 10px;
+            min-height: 30px;
+            font-weight: bold;
+        }
+
+        /* Action buttons container */
+        .action-buttons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 30px;
+        }
+
+        .action-btn {
+            background: linear-gradient(145deg, #ff6b6b, #ee5a52);
+            color: white;
+            border: none;
+            border-radius: 12px;
+            padding: 15px 30px;
+            font-size: 1.2em;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .action-btn:hover {
+            background: linear-gradient(145deg, #ee5a52, #dd4940);
+            transform: scale(1.05);
+        }
+
+        .action-btn.secondary {
+            background: linear-gradient(145deg, #ffd93d, #f5c92e);
+        }
+
+        .action-btn.secondary:hover {
+            background: linear-gradient(145deg, #f5c92e, #e8bd2a);
+        }
+
+        .action-btn.reset {
+            background: linear-gradient(145deg, #95a5a6, #7f8c8d);
+        }
+
+        .action-btn.reset:hover {
+            background: linear-gradient(145deg, #7f8c8d, #6b7778);
+        }
+
+        /* Story display area */
+        .story-display {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+            min-height: 100px;
+            display: none;
+        }
+
+        .story-display.active {
+            display: block;
+            animation: fadeIn 0.5s;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .story-text {
+            font-size: 1.5em;
+            color: #2c3e50;
+            text-align: center;
+            line-height: 1.6;
+        }
+
+        /* Instructions */
+        .instructions {
+            text-align: center;
+            color: #666;
+            font-size: 0.9em;
+            margin-top: 20px;
+            font-style: italic;
+        }
+
+        /* Responsive design */
+        @media (max-width: 600px) {
+            .container {
+                padding: 20px;
+            }
+
+            h1 {
+                font-size: 1.8em;
+            }
+
+            .action-buttons {
+                flex-direction: column;
+            }
+
+            .action-btn {
+                width: 100%;
+            }
+        }
