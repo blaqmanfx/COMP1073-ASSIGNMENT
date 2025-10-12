@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>See 'N Say Storymaker</title>
+    <link rel="stylesheet" href="css/storymaker.css">
+    <script src="js/storymaker.js" defer></script>
+</head>
+<body>
+    <div class="container">
+        <h1>See 'N Say Storymaker</h1>
+        <h2>Welcome to the See 'N Say Storymaker! Create your own fun stories by selecting different characters, settings, and actions. Click the button below to get started!</h2>
+        <p class="subtitle">Click the button to start making your story!</p>
+        
+        <!-- Word selectors for each part of the story -->
+        <div class="word-selectors">
+            <!-- Selector 1: Character -->
+            <div class="selector">
+                <div class="selector-label">WHO?</div>
+                <button class="cycle-btn" onclick="cycleWord(0)">Choose Character</button>
+                <div class="selected-word" id="word-0">?</div>
+            </div>
+
+            <!-- Selector 2: Action -->
+            <div class="selector">
+                <div class="selector-label">DID WHAT?</div>
+                <button class="cycle-btn" onclick="cycleWord(1)">Choose Action</button>
+                <div class="selected-word" id="word-1">?</div>
+            </div>
+
+            <!-- Selector 3: Location -->
+            <div class="selector">
+                <div class="selector-label">WHERE?</div>
+                <button class="cycle-btn" onclick="cycleWord(2)">Choose Place</button>
+                <div class="selected-word" id="word-2">?</div>
+            </div>
+
+            <!-- Selector 4: Time -->
+            <div class="selector">
+                <div class="selector-label">WHEN?</div>
+                <button class="cycle-btn" onclick="cycleWord(3)">Choose Time</button>
+                <div class="selected-word" id="word-3">?</div>
+            </div>
+
+            <!-- Selector 5: Feeling -->
+            <div class="selector">
+                <div class="selector-label">HOW?</div>
+                <button class="cycle-btn" onclick="cycleWord(4)">Choose Feeling</button>
+                <div class="selected-word" id="word-4">?</div>
+            </div>
+        </div>
+
+        <!-- Action buttons -->
+        <div class="action-buttons">
+            <button class="action-btn" onclick="showStory()">📖 See My Story!</button>
+            <button class="action-btn secondary" onclick="generateRandom()">🎲 Random Story</button>
+            <button class="action-btn reset" onclick="resetStory()">🔄 Start Over</button>
+        </div>
+
+        <!-- Story display area -->
+        <div class="story-display" id="story-display">
+            <div class="story-text" id="story-text"></div>
+        </div>
+
+        <p class="instructions">Click each button to cycle through options. When ready, click "See My Story!"</p>
+    </div>
+        
+    
+</body>
+</html>
