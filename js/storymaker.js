@@ -45,3 +45,27 @@
             // Update the display to show the selected word
             document.getElementById('word-' + arrayIndex).textContent = currentWord;
         }
+
+        // Function to generate and Displays the complete story using all selected words
+
+        function displayStory() {
+            // Check if all words have been selected (none are still '?')
+            if (selectedWords.includes('?')) {
+                alert('Please select all parts of your story first!');
+                return;
+            }
+            
+            // Construct the complete story sentence
+            const story = selectedWords[0] + ' ' + 
+                         selectedWords[1] + ' ' + 
+                         selectedWords[2] + ' ' + 
+                         selectedWords[3] + ' ' + 
+                         selectedWords[4] + '.';
+            
+            // Display the story
+            document.getElementById('story-text').textContent = story;
+            document.getElementById('story-display').classList.add('active');
+            
+            // Optional: Read the story aloud using Web Speech API
+            speakStory(story);
+        }
