@@ -22,4 +22,26 @@
         let currentIndices = [-1, -1, -1, -1, -1];
 
         // Array to store the user's selected words
-        let selectedWords = ['?', '?', '?', '?', '?'];  
+        let selectedWords = ['?', '?', '?', '?', '?']; 
+        
+        
+        // Function to cycle through words in a given array
+        
+        function cycleWord(arrayIndex) {
+            // Increment the index for this array
+            currentIndices[arrayIndex]++;
+            
+            // If we've reached the end of the array, loop back to the beginning
+            if (currentIndices[arrayIndex] >= wordArrays[arrayIndex].length) {
+                currentIndices[arrayIndex] = 0;
+            }
+            
+            // Get the current word from the array
+            const currentWord = wordArrays[arrayIndex][currentIndices[arrayIndex]];
+            
+            // Store the selected word
+            selectedWords[arrayIndex] = currentWord;
+            
+            // Update the display to show the selected word
+            document.getElementById('word-' + arrayIndex).textContent = currentWord;
+        }
