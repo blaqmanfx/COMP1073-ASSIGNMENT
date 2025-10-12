@@ -69,3 +69,24 @@
             // Optional: Read the story aloud using Web Speech API
             speakStory(story);
         }
+
+        // function to  Generates a completely random story by selecting random words from each array
+
+        function generateRandom() {
+            // Loop through each word array
+            for (let i = 0; i < wordArrays.length; i++) {
+                // Generate a random index within the bounds of the current array
+                const randomIndex = Math.floor(Math.random() * wordArrays[i].length);
+                
+                // Update the current index
+                currentIndices[i] = randomIndex;
+                
+                // Get and store the random word
+                selectedWords[i] = wordArrays[i][randomIndex];
+                
+                // Update the display
+                document.getElementById('word-' + i).textContent = selectedWords[i];
+            }
+            // Display the generated story
+            displayStory();
+        }
