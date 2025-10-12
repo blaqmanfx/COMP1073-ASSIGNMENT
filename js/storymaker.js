@@ -16,3 +16,10 @@
             // Array 4: Feelings/endings
             ['and felt very happy', 'and laughed joyfully', 'and had a wonderful time', 'and smiled brightly', 'and danced with joy', 'and felt proud']
         ];
+
+        // Array to keep track of current index for each word category
+        // Starts at -1 so first click shows index 0
+        let currentIndices = [-1, -1, -1, -1, -1];
+
+        // Array to store the user's selected words
+        let selectedWords = ['?', '?', '?', '?', '?'];  
